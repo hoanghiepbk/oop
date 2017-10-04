@@ -4,6 +4,18 @@ class DB_student extends DB{
 function __construct() {
 	parent::__construct();
 }
+function get_all_students() {
+	global $config;
+	$sql = "select * from tb_sinhvien";
+	$query = mysqli_query($config,$sql);
+	$result = array();
+	if ($query){
+		while($row = mysqli_fetch_assoc($query)) {
+			$result[]= $row;	
+	}
+}
+return $result;
+}	
 public function get_student($id = -1){
 	$query = "SELECT * FROM tb_sinhvien ";
 	if($id != -1) {
