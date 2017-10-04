@@ -8,7 +8,7 @@ class student extends DB_student{
 	} 
 }	
 $stu = new student ();
-$stu = get_student ();
+$stu = get_all_students ();
 ?>
  
 <!DOCTYPE html>
